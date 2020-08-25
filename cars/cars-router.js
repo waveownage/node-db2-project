@@ -27,11 +27,11 @@ router.get("/:id", async (req, res, next) => {
 
 router.post("/", async (req, res, next) => {
 	try {
-		const fruitData = req.body
-		const [id] = await db("fruits").insert(fruitData)
-		const newFruit = await db("fruits").where({ id })
+		const carData = req.body
+		const [id] = await db("cars").insert(carData)
+		const newCar = await db("cars").where({ id })
 
-		res.status(201).json(newFruit)
+		res.status(201).json(newCar)
 	} catch(err) {
 		next(err)
 	}
